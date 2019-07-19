@@ -125,8 +125,7 @@ if __name__ == '__main__':
         model_final = create_model(X_train.num_classes, args.dropout, shape)
 
         train_model(model_final, X_train, X_test, callbacks, args)
-    else:
-        #trained_model = load_model(model_final, args.model_path, shape)
+    else:   #test model
         trained_model = load_model(args.model_path, shape)
         image = load_image(args.image_path, shape[:2])
         preds = trained_model.predict(image)
